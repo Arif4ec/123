@@ -1,3 +1,7 @@
+*{
+    box-sizing:border-box;
+}
+
 html{
 
     scroll-behavior:smooth;
@@ -15,12 +19,11 @@ h3{
 }
 
 h1{
-    font-size:55px;
-    margin:10px;
+    font-size:clamp(38px,7vw,65px);
 }
 
 p{
-    font-size:20px;
+    font-size:clamp(16px,2.5vw,20px);
 }
 
 button{
@@ -46,7 +49,7 @@ button:hover{
 
 .content h2{
 
-    font-size:42px;
+    font-size:clamp(28px,5vw,42px);
 
     color:#8B6B3E;
 
@@ -124,7 +127,7 @@ h1{
 
 .card{
 
-    width:300px;
+    width:min(300px,100%);
     background:white;
     border-radius:20px;
     padding:20px;
@@ -143,9 +146,9 @@ h1{
 
 .card img{
 
-    width:220px;
+    width:min(220px,70vw);
 
-    height:220px;
+    height:min(220px,70vw);
 
     border-radius:50%;
 
@@ -493,11 +496,11 @@ h1{
 
 section{
 
-    max-width:1100px;
+    width:min(1100px, calc(100% - 30px));
 
-    margin:70px auto;
+    margin:40px auto;
 
-    padding:70px 40px;
+    padding:40px 20px;
 
     background:rgba(255,255,255,.88);
 
@@ -506,6 +509,8 @@ section{
     border-radius:30px;
 
     box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    box-sizing:border-box;
 
 }
 
@@ -675,6 +680,10 @@ section.show h2::after{
     color:#8B6B3E;
     transform:none;
 
+}
+
+body{
+    overflow-x:hidden;
 }
 
 
