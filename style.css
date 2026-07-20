@@ -238,48 +238,28 @@ h1{
 }
 
 .timer{
-
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:15px;
+    gap:20px;
     flex-wrap:wrap;
     margin-top:40px;
-
 }
 
 .box{
-
-    width:90px;
-    height:100px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
+    width:120px;
     background:white;
     border-radius:20px;
-
-    padding:15px;
-
+    padding:20px;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
-
 }
 
 .box h1{
-
     margin:0;
-    font-size:40px;
-    color:#8B6B3E;
-
+    font-size:45px;
 }
 
 .box p{
-
-    margin:5px 0 0;
-    font-size:14px;
-
+    margin-top:10px;
 }
 
 .acara{
@@ -704,29 +684,6 @@ section.show h2::after{
 
 body{
     overflow-x:hidden;
-}
-
-@media(max-width:400px){
-
-    .box{
-
-        width:70px;
-        height:85px;
-
-    }
-
-    .box h1{
-
-        font-size:30px;
-
-    }
-
-    .box p{
-
-        font-size:11px;
-
-    }
-
 }
 
 
