@@ -47,19 +47,6 @@ body{
     box-sizing:border-box;
 }
 
-:root{
-
-    --container:1100px;
-
-    --section-padding:clamp(30px,5vw,60px);
-
-    --title-size:clamp(36px,5vw,65px);
-
-    --subtitle-size:clamp(28px,4vw,42px);
-
-    --text-size:clamp(16px,2vw,19px);
-
-}
 
 html{
 
@@ -108,7 +95,7 @@ button:hover{
 
 .content h2{
 
-    font-size:var(--subtitle-size);
+    font-size:clamp(28px,5vw,42px);
 
     color:#8B6B3E;
 
@@ -165,7 +152,7 @@ body{
 
     backdrop-filter:blur(10px);
 
-    padding:clamp(35px,6vw,65px);
+    padding:65px;
 
     border-radius:35px;
 
@@ -183,7 +170,7 @@ body{
 
 h1{
 
-     font-size:var(--title-size);
+    font-size:65px;
 
     color:#8B6B3E;
 
@@ -717,11 +704,11 @@ h1{
 
 section{
 
-    width:min(var(--container),92%);
+    width:min(1100px, calc(100% - 30px));
 
     margin:55px auto;
 
-    padding:var(--section-padding);
+    padding:55px 30px;
 
     background:linear-gradient(
         180deg,
