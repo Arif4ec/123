@@ -1,12 +1,11 @@
 function bukaUndangan(){
 
-  const musik = document.getElementById("musik");
-  const musicBtn = document.getElementById("musicBtn");
-  const cover = document.getElementById("cover");
-  const content = document.getElementById("content");
-	
+    const musik = document.getElementById("musik");
+    const musicBtn = document.getElementById("musicBtn");
+    const cover = document.getElementById("cover");
+    const content = document.getElementById("content");
 
-    cover.style.transition = "opacity 1s";
+    cover.style.transition = "opacity .35s ease";
     cover.style.opacity = "0";
 
     setTimeout(function(){
@@ -15,12 +14,12 @@ function bukaUndangan(){
 
         content.classList.add("show");
 
-      musik.play();
+        musik.play();
 
-     musicBtn.style.display = "block";
-     musicBtn.classList.add("playing");
+        musicBtn.style.display = "block";
+        musicBtn.classList.add("playing");
 
-    },1000);
+    },350);
 
 }
 
@@ -133,3 +132,14 @@ window.addEventListener("scroll", function(){
     document.body.style.backgroundPositionY = posisi * 0.3 + "px";
 
 });
+
+function copyRek(id){
+
+    const nomor = document.getElementById(id).innerText;
+
+    navigator.clipboard.writeText(nomor);
+
+    alert("Nomor rekening berhasil disalin");
+
+}
+
