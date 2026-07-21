@@ -1,3 +1,48 @@
+.music-btn:hover{
+
+    background:rgba(255,255,255,.25);
+    color:#8B6B3E;
+    transform:none;
+
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* ================= PEMBUKA MEMPELAI ================= */
+
+.mempelai h2,
+.mempelai > p{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1.8s cubic-bezier(.19,1,.22,1);
+
+}
+
+.mempelai.show h2{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:.6s;
+
+}
+
+.mempelai.show > p{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:1.2s;
+
+}
+
 *{
     box-sizing:border-box;
 }
@@ -58,6 +103,9 @@ button:hover{
     margin-bottom:15px;
 
     letter-spacing:2px;
+	
+	text-shadow:
+    0 2px 8px rgba(212,175,55,.15);
 
 }
 
@@ -79,27 +127,43 @@ hr{
 body{
 
     margin:0;
+
     font-family:Arial,sans-serif;
-    background-image:url("img/background.jpg");
+
+    background-image:
+
+        linear-gradient(rgba(255,248,240,.28),rgba(255,248,240,.28)),
+
+        url("img/background.jpg");
+
     background-size:cover;
-    background-position:center 0;
+
+    background-position:center;
+
     background-repeat:no-repeat;
 
 }
 
 
-
 .overlay{
 
-    background:rgba(255,255,255,0.75);
+    background:rgba(255,250,245,.82);
 
-    padding:60px;
+    backdrop-filter:blur(10px);
 
-    border-radius:25px;
+    padding:65px;
+
+    border-radius:35px;
+
+    border:1px solid rgba(212,175,55,.18);
 
     text-align:center;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.15),
+
+        0 5px 20px rgba(212,175,55,.12);
 
 }
 
@@ -109,7 +173,15 @@ h1{
 
     color:#8B6B3E;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+        0 2px 5px rgba(0,0,0,.08);
 
 }
 
@@ -125,22 +197,137 @@ h1{
     margin-top:40px;
 }
 
+/* ================= MEMPELAI PREMIUM ================= */
+
+.card{
+
+    opacity:1;
+
+    overflow:hidden;
+
+}
+
+/* isi card yang bergerak */
+
+.card img,
+.card h3,
+.card p{
+
+    transition:1.2s cubic-bezier(.22,1,.36,1);
+
+}
+
+/* ---------- PRIA ---------- */
+
+.card:first-child img,
+.card:first-child h3,
+.card:first-child p{
+
+    transform:translateX(-100vw);
+
+    opacity:0;
+
+}
+
+/* ---------- WANITA ---------- */
+
+.card:last-child img,
+.card:last-child h3,
+.card:last-child p{
+
+    transform:translateX(100vw);
+
+    opacity:0;
+
+}
+
+/* ---------- SAAT MUNCUL ---------- */
+
+.mempelai.show .card img,
+.mempelai.show .card h3,
+.mempelai.show .card p{
+
+    transform:translateX(0);
+
+    opacity:1;
+
+}
+
+/* delay supaya tersusun */
+
+.card:first-child h3{
+
+    transition-delay:.15s;
+
+}
+
+.card:first-child p:nth-of-type(1){
+
+    transition-delay:.25s;
+
+}
+
+.card:first-child p:nth-of-type(2){
+
+    transition-delay:.35s;
+
+}
+
+.card:first-child p:nth-of-type(3){
+
+    transition-delay:.45s;
+
+}
+
+.card:last-child h3{
+
+    transition-delay:.15s;
+
+}
+
+.card:last-child p:nth-of-type(1){
+
+    transition-delay:.25s;
+
+}
+
+.card:last-child p:nth-of-type(2){
+
+    transition-delay:.35s;
+
+}
+
+.card:last-child p:nth-of-type(3){
+
+    transition-delay:.45s;
+
+}
+
 .card{
 
     width:min(300px,100%);
-    background:white;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
-    transition:.4s;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(212,175,55,.15);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:1.2s cubic-bezier(.19,1,.22,1);
 
 }
 
 .card:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-10px);
 
-    box-shadow:0 20px 40px rgba(0,0,0,.18);
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
 
 }
 
@@ -154,11 +341,11 @@ h1{
 
     object-fit:cover;
 
-    border:8px solid white;
+    border:8px solid rgba(255,255,255,.9);
 
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
 
-    transition:.5s;
+    transition:1.2s cubic-bezier(.19,1,.22,1);
 
 }
 
@@ -518,19 +705,29 @@ section{
 
     width:min(1100px, calc(100% - 30px));
 
-    margin:40px auto;
+    margin:55px auto;
 
-    padding:40px 20px;
+    padding:55px 30px;
 
-    background:rgba(255,255,255,.88);
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.92),
+        rgba(250,247,240,.88)
+    );
 
-    backdrop-filter:blur(5px);
+    backdrop-filter:blur(12px);
 
-    border-radius:30px;
+    border:1px solid rgba(212,175,55,.18);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    border-radius:35px;
 
-    box-sizing:border-box;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.08),
+        0 2px 0 rgba(255,255,255,.7) inset;
+
+    overflow:hidden;
+
+    position:relative;
 
 }
 
@@ -538,17 +735,26 @@ section::before{
 
     content:"";
 
-    display:block;
+    position:absolute;
 
-    width:80px;
+    top:0;
 
-    height:3px;
+    left:50%;
 
-    background:#b8860b;
+    transform:translateX(-50%);
 
-    margin:0 auto 20px;
+    width:160px;
 
-    border-radius:20px;
+    height:4px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #d4af37,
+        #fff6d5,
+        #d4af37,
+        transparent
+    );
 
 }
 
@@ -556,9 +762,60 @@ section{
 
     opacity:0;
 
-    transform:translateY(80px) scale(.96);
-
     transition:1s cubic-bezier(.2,.8,.2,1);
+
+}
+
+/* ========= ANIMASI PER SECTION ========= */
+
+.mempelai{
+
+    opacity:0;
+    transform:translateY(80px);
+
+}
+
+.ayat{
+
+    opacity:0;
+    transform:translateY(80px) scale(.95);
+
+}
+
+.countdown{
+
+    opacity:0;
+    transform:translateY(60px);
+
+}
+
+.acara{
+
+    opacity:0;
+    transform:translateX(-120px);
+
+}
+
+.lokasi{
+
+    opacity:0;
+    transform:translateX(120px);
+
+}
+
+.galeri{
+
+    opacity:0;
+    transform:translateY(80px);
+
+}
+
+/* Saat muncul */
+
+section.show{
+
+    opacity:1;
+    transform:none;
 
 }
 
@@ -566,7 +823,15 @@ section.show{
 
     opacity:1;
 
-    transform:translateY(0) scale(1);
+    transform:none;
+
+}
+
+.content h2{
+
+    position:relative;
+
+    display:inline-block;
 
 }
 
@@ -574,23 +839,36 @@ section.show{
 
     content:"";
 
-    display:block;
+    position:absolute;
+
+    left:50%;
+
+    bottom:-12px;
+
+    transform:translateX(-50%);
 
     width:0;
 
     height:2px;
 
-    background:linear-gradient(to right,#d4af37,#f7e7a1,#d4af37);
+    border-radius:20px;
 
-    margin:15px auto 0;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #d4af37,
+        #fff3c4,
+        #d4af37,
+        transparent
+    );
 
-    transition:1s;
+    transition:1.2s ease;
 
 }
 
 section.show h2::after{
 
-    width:120px;
+    width:180px;
 
 }
 
@@ -728,5 +1006,92 @@ body{
     }
 
 }
+
+/* ================= PINTU COVER ================= */
+
+.cover{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+/* ================= WEDDING GIFT ================= */
+
+.gift{
+
+    text-align:center;
+
+}
+
+.gift-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
+
+}
+
+.gift-card{
+
+    width:330px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.95),
+        rgba(248,243,232,.92)
+    );
+
+    border:1px solid rgba(212,175,55,.25);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.45s;
+
+}
+
+.gift-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.gift-card h3{
+
+    color:#8B6B3E;
+
+}
+
+.gift-card h4{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+}
+
+.gift-card p{
+
+    font-size:22px;
+
+    letter-spacing:2px;
+
+    margin:20px 0;
+
+}
+
+
 
 
