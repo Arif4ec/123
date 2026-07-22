@@ -312,6 +312,10 @@ h1{
 
     width:min(300px,100%);
 
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
     background:rgba(255,255,255,.75);
 
     backdrop-filter:blur(8px);
