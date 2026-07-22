@@ -95,21 +95,19 @@ button:hover{
 
 .content h2{
 
-    font-size:clamp(28px,5vw,42px);
+    font-size:clamp(24px,4.5vw,42px);
 
     color:#8B6B3E;
 
     font-family:Georgia,serif;
 
     margin:0 auto 15px;
-	
-	padding-left:30px;
 
     text-align:center;
 
     width:100%;
 
-    letter-spacing:1px;
+    letter-spacing:0;
 
     text-shadow:
     0 2px 8px rgba(212,175,55,.15);
