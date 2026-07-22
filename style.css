@@ -115,9 +115,13 @@ button:hover{
 }
 
 .content p{
-    max-width:700px;
+
+    width:min(720px,95%);
+
     margin:auto;
-    line-height:30px;
+
+    line-height:1.9;
+
 }
 
 hr{
@@ -191,11 +195,19 @@ h1{
 }
 
 .pasangan{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:45px;
+
+    margin-top:50px;
+
+    justify-items:center;
+
+    align-items:start;
+
 }
 
 /* ================= MEMPELAI PREMIUM ================= */
@@ -306,7 +318,9 @@ h1{
 
 .card{
 
-    width:min(300px,100%);
+    width:100%;
+
+    max-width:340px;
 
     background:rgba(255,255,255,.75);
 
@@ -334,9 +348,13 @@ h1{
 
 .card img{
 
-    width:min(220px,70vw);
+    width:220px;
 
-    height:min(220px,70vw);
+    height:220px;
+
+    max-width:65vw;
+
+    max-height:65vw;
 
     border-radius:50%;
 
