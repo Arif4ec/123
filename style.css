@@ -752,33 +752,93 @@ h1{
 
 }
 
+@media (max-width:768px){
+
 section{
 
-    width:min(1100px, calc(100% - 30px));
+    width:100%;
 
-    margin:55px auto;
+    margin:20px auto;
 
-    padding:55px 30px;
+    padding:30px 16px;
 
-    background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.92),
-        rgba(250,247,240,.88)
-    );
+    border-radius:22px;
 
-    backdrop-filter:blur(12px);
+}
 
-    border:1px solid rgba(212,175,55,.18);
+.pasangan{
 
-    border-radius:35px;
+    grid-template-columns:1fr;
 
-    box-shadow:
-        0 12px 40px rgba(0,0,0,.08),
-        0 2px 0 rgba(255,255,255,.7) inset;
+    gap:35px;
 
-    overflow:hidden;
+}
 
-    position:relative;
+.card{
+
+    max-width:100%;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.card img{
+
+    width:180px;
+
+    height:180px;
+
+}
+
+.content h2{
+
+    font-size:30px;
+
+}
+
+.content p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+.arab{
+
+    font-size:26px;
+
+    line-height:1.9;
+
+}
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+.gift-card{
+
+    width:100%;
+
+}
+
+.card-acara{
+
+    width:100%;
+
+}
+
+.box{
+
+    width:75px;
+
+    height:85px;
+
+}
 
 }
 
