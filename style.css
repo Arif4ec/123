@@ -101,11 +101,15 @@ button:hover{
 
     font-family:Georgia,serif;
 
-    margin-bottom:15px;
+    margin:0 auto 15px;
 
-    letter-spacing:2px;
-	
-	text-shadow:
+    text-align:center;
+
+    width:100%;
+
+    letter-spacing:1px;
+
+    text-shadow:
     0 2px 8px rgba(212,175,55,.15);
 
 }
