@@ -115,15 +115,9 @@ button:hover{
 }
 
 .content p{
-
-    max-width:720px;
-
-    width:100%;
-
+    max-width:700px;
     margin:auto;
-
-    line-height:1.8;
-
+    line-height:30px;
 }
 
 hr{
@@ -197,19 +191,11 @@ h1{
 }
 
 .pasangan{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:45px;
-
-    margin-top:50px;
-
-    justify-items:center;
-
-    align-items:start;
-
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:40px;
 }
 
 /* ================= MEMPELAI PREMIUM ================= */
@@ -320,9 +306,7 @@ h1{
 
 .card{
 
-   width:92%;
-
-   max-width:320px;
+    width:min(300px,100%);
 
     background:rgba(255,255,255,.75);
 
@@ -350,13 +334,9 @@ h1{
 
 .card img{
 
-    width:220px;
+    width:min(220px,70vw);
 
-    height:220px;
-
-    max-width:65vw;
-
-    max-height:65vw;
+    height:min(220px,70vw);
 
     border-radius:50%;
 
@@ -427,11 +407,9 @@ h1{
 
 .arti{
 
-    margin-top:35px;
+    margin-top:40px;
 
-    font-size:18px;
-
-    width:95%;
+    font-size:20px;
 
     max-width:900px;
 
@@ -549,34 +527,6 @@ h1{
 }
 
 @media (max-width:768px){
-
-    section{
-
-        width:96%;
-
-        padding:35px 18px;
-
-        border-radius:28px;
-
-    }
-
-    .content h2{
-
-        font-size:clamp(28px,7vw,38px);
-
-        line-height:1.2;
-
-    }
-
-    .content p{
-
-        max-width:100%;
-
-        font-size:18px;
-
-        line-height:1.8;
-
-    }
 
     .arab{
 
@@ -752,93 +702,33 @@ h1{
 
 }
 
-@media (max-width:768px){
-
 section{
 
-    width:100%;
+    width:min(1100px, calc(100% - 30px));
 
-    margin:20px auto;
+    margin:55px auto;
 
-    padding:30px 16px;
+    padding:55px 30px;
 
-    border-radius:22px;
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.92),
+        rgba(250,247,240,.88)
+    );
 
-}
+    backdrop-filter:blur(12px);
 
-.pasangan{
+    border:1px solid rgba(212,175,55,.18);
 
-    grid-template-columns:1fr;
+    border-radius:35px;
 
-    gap:35px;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.08),
+        0 2px 0 rgba(255,255,255,.7) inset;
 
-}
+    overflow:hidden;
 
-.card{
-
-    max-width:100%;
-
-    width:100%;
-
-    padding:20px;
-
-}
-
-.card img{
-
-    width:180px;
-
-    height:180px;
-
-}
-
-.content h2{
-
-    font-size:30px;
-
-}
-
-.content p{
-
-    font-size:17px;
-
-    line-height:1.8;
-
-}
-
-.arab{
-
-    font-size:26px;
-
-    line-height:1.9;
-
-}
-
-.gallery{
-
-    grid-template-columns:1fr;
-
-}
-
-.gift-card{
-
-    width:100%;
-
-}
-
-.card-acara{
-
-    width:100%;
-
-}
-
-.box{
-
-    width:75px;
-
-    height:85px;
-
-}
+    position:relative;
 
 }
 
