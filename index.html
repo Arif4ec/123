@@ -237,6 +237,48 @@
 
 </section>
 
+<section class="ucapan">
+
+    <h2>Ucapan & Doa</h2>
+
+    <p>Berikan doa terbaik untuk kedua mempelai.</p>
+
+    <form id="wishForm">
+	<form id="wishForm" autocomplete="off">
+
+        <input
+         type="text"
+         id="nama"
+         name="nama"
+         placeholder="Nama Anda"
+         autocomplete="off"
+         required
+        >
+
+        <select id="hadir">
+
+            <option value="Hadir">✅ Hadir</option>
+            <option value="Berhalangan">❌ Berhalangan</option>
+
+        </select>
+
+        <textarea
+            id="pesan"
+            rows="5"
+            placeholder="Tulis ucapan dan doa..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Kirim Ucapan
+        </button>
+
+    </form>
+
+    <div id="listUcapan"></div>
+
+</section>
+
 </div>
     <script src="script.js"></script>
 	<audio id="musik" loop>
