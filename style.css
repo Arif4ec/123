@@ -1101,6 +1101,84 @@ body{
 
 }
 
+.ucapan{
+
+    text-align:center;
+
+}
+
+#wishForm{
+
+    max-width:650px;
+
+    margin:40px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#wishForm input,
+#wishForm select,
+#wishForm textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    background:#fff;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+#wishForm textarea{
+
+    resize:none;
+
+}
+
+.ucapan-card{
+
+    max-width:650px;
+
+    margin:20px auto;
+
+    text-align:left;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.ucapan-card h3{
+
+    margin:0;
+
+    color:#8B6B3E;
+
+}
+
+.ucapan-card small{
+
+    color:#777;
+
+}
+
 
 
 
