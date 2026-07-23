@@ -143,3 +143,58 @@ function copyRek(id){
 
 }
 
+const form=document.getElementById("wishForm");
+
+const list=document.getElementById("listUcapan");
+
+let data=[];
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const nama=document.getElementById("nama").value;
+
+const hadir=document.getElementById("hadir").value;
+
+const pesan=document.getElementById("pesan").value;
+
+data.unshift({
+
+nama,
+
+hadir,
+
+pesan
+
+});
+
+render();
+
+form.reset();
+
+});
+
+function render(){
+
+list.innerHTML="";
+
+data.forEach(function(item){
+
+list.innerHTML+=`
+
+<div class="ucapan-card">
+
+<h3>${item.nama}</h3>
+
+<small>${item.hadir}</small>
+
+<p>${item.pesan}</p>
+
+</div>
+
+`;
+
+});
+
+}
