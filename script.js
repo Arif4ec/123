@@ -22,6 +22,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+let isAdmin = false;
+
 function bukaUndangan(){
 	
     const musik = document.getElementById("musik");
@@ -194,11 +196,13 @@ const q = query(
     orderBy("waktu", "desc")
 );
 
-onSnapshot(q, function(snapshot){
+let semuaKomentar = [];
+
+function renderKomentar(){
 
     list.innerHTML = "";
 
-    snapshot.forEach(function(item){
+    semuaKomentar.forEach(function(item){
 
         const data = item.data();
 
@@ -211,16 +215,24 @@ onSnapshot(q, function(snapshot){
 
             <p>${data.pesan}</p>
 
-        ${localStorage.getItem("admin") === "true" ? `
-         <button onclick="hapusKomentar('${item.id}')" class="hapus-btn">
-         🗑 Hapus
-</button>
-` : ""}
+            ${isAdmin ? `
+            <button onclick="hapusKomentar('${item.id}')" class="hapus-btn">
+                🗑 Hapus
+            </button>
+            ` : ""}
 
         </div>
         `;
 
     });
+
+}
+
+onSnapshot(q, function(snapshot){
+
+    semuaKomentar = snapshot.docs;
+
+    renderKomentar();
 
 });
 
@@ -244,17 +256,17 @@ document.getElementById("adminTrigger").addEventListener("click", function(){
 
         const password = prompt("Password Admin");
 
-        if(password === "Arif2026!"){
+       if(password === "Arif2026!"){
 
-            localStorage.setItem("admin","true");
+    isAdmin = true;
 
-            location.reload();
+    renderKomentar();
 
-        }else{
+    }else{
 
-            alert("Password salah");
+    alert("Password salah");
 
-        }
+}
 
     }
 
