@@ -232,22 +232,30 @@ window.hapusKomentar = async function(id){
 
 }
 
-window.loginAdmin = function(){
+let klikAdmin = 0;
 
-    const password = prompt("Password Admin");
+document.getElementById("adminTrigger").addEventListener("click", function(){
 
-    if(password === "Arif2026!"){
+    klikAdmin++;
 
-        localStorage.setItem("admin","true");
+    if(klikAdmin >= 10){
 
-        alert("Mode Admin Aktif");
+        klikAdmin = 0;
 
-        location.reload();
+        const password = prompt("Password Admin");
 
-    }else{
+        if(password === "Arif2026!"){
 
-        alert("Password salah");
+            localStorage.setItem("admin","true");
+
+            location.reload();
+
+        }else{
+
+            alert("Password salah");
+
+        }
 
     }
 
-}
+});
