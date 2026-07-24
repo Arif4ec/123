@@ -1,5 +1,29 @@
-function bukaUndangan(){
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    query,
+    orderBy,
+    onSnapshot,
+    serverTimestamp,
+    deleteDoc,
+    doc
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyApzkn1I1agP3F8JdaPc-cV9JtmAQCJ4nQ",
+    authDomain: "undangan-pernikahan-4df30.firebaseapp.com",
+    projectId: "undangan-pernikahan-4df30",
+    storageBucket: "undangan-pernikahan-4df30.firebasestorage.app",
+    messagingSenderId: "352613631882",
+    appId: "1:352613631882:web:47d2a88311af6fb53a2a73"
+};
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+function bukaUndangan(){
+	
     const musik = document.getElementById("musik");
     const musicBtn = document.getElementById("musicBtn");
     const cover = document.getElementById("cover");
@@ -22,6 +46,8 @@ function bukaUndangan(){
     },350);
 
 }
+
+window.bukaUndangan = bukaUndangan;
 
 const tanggalNikah = new Date("September 20, 2026 09:00:00").getTime();
 
@@ -143,58 +169,85 @@ function copyRek(id){
 
 }
 
-const form=document.getElementById("wishForm");
+const form = document.getElementById("wishForm");
+const list = document.getElementById("listUcapan");
 
-const list=document.getElementById("listUcapan");
+form.addEventListener("submit", async function (e) {
 
-let data=[];
+    e.preventDefault();
 
-form.addEventListener("submit",function(e){
+    await addDoc(collection(db, "comments"), {
 
-e.preventDefault();
+        nama: document.getElementById("nama").value,
+        hadir: document.getElementById("hadir").value,
+        pesan: document.getElementById("pesan").value,
+        waktu: serverTimestamp()
 
-const nama=document.getElementById("nama").value;
+    });
 
-const hadir=document.getElementById("hadir").value;
-
-const pesan=document.getElementById("pesan").value;
-
-data.unshift({
-
-nama,
-
-hadir,
-
-pesan
+    form.reset();
 
 });
 
-render();
+const q = query(
+    collection(db, "comments"),
+    orderBy("waktu", "desc")
+);
 
-form.reset();
+onSnapshot(q, function(snapshot){
+
+    list.innerHTML = "";
+
+    snapshot.forEach(function(item){
+
+        const data = item.data();
+
+        list.innerHTML += `
+        <div class="ucapan-card">
+
+            <h3>${data.nama}</h3>
+
+            <small>${data.hadir}</small>
+
+            <p>${data.pesan}</p>
+
+        ${localStorage.getItem("admin") === "true" ? `
+         <button onclick="hapusKomentar('${item.id}')" class="hapus-btn">
+         🗑 Hapus
+</button>
+` : ""}
+
+        </div>
+        `;
+
+    });
 
 });
 
-function render(){
+window.hapusKomentar = async function(id){
 
-list.innerHTML="";
+    await deleteDoc(doc(db, "comments", id));
 
-data.forEach(function(item){
+    alert("Komentar berhasil dihapus");
 
-list.innerHTML+=`
+}
 
-<div class="ucapan-card">
+window.loginAdmin = function(){
 
-<h3>${item.nama}</h3>
+    const password = prompt("Password Admin");
 
-<small>${item.hadir}</small>
+    if(password === "Arif2026!"){
 
-<p>${item.pesan}</p>
+        localStorage.setItem("admin","true");
 
-</div>
+        alert("Mode Admin Aktif");
 
-`;
+        location.reload();
 
-});
+    }else{
+
+        alert("Password salah");
+
+    }
 
 }
