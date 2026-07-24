@@ -243,44 +243,40 @@
 
     <p>Berikan doa terbaik untuk kedua mempelai.</p>
 
-    <form id="wishForm">
-	<form id="wishForm" autocomplete="off">
+    <form id="wishForm" autocomplete="off">
 
-        <input
-         type="text"
-         id="nama"
-         name="nama"
-         placeholder="Nama Anda"
-         autocomplete="off"
-         required
-        >
+    <input
+        type="text"
+        id="nama"
+        name="nama"
+        placeholder="Nama Anda"
+        autocomplete="off"
+        required
+    >
 
-        <select id="hadir">
+    <select id="hadir">
+        <option value="Hadir">✅ Hadir</option>
+        <option value="Berhalangan">❌ Berhalangan</option>
+    </select>
 
-            <option value="Hadir">✅ Hadir</option>
-            <option value="Berhalangan">❌ Berhalangan</option>
+    <textarea
+        id="pesan"
+        rows="5"
+        placeholder="Tulis ucapan dan doa..."
+        required
+    ></textarea>
 
-        </select>
+    <button type="submit">
+        Kirim Ucapan
+    </button>
 
-        <textarea
-            id="pesan"
-            rows="5"
-            placeholder="Tulis ucapan dan doa..."
-            required
-        ></textarea>
+</form>
 
-        <button type="submit">
-            Kirim Ucapan
-        </button>
-
-    </form>
-
-    <div id="listUcapan"></div>
-
+<div id="listUcapan"></div>
 </section>
 
 </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 	<audio id="musik" loop>
     <source src="music/musik.mp3" type="audio/mpeg">
 </audio>
@@ -291,6 +287,10 @@
     <img id="lightbox-img">
 
 </div>
+
+<button onclick="loginAdmin()" id="adminBtn">
+    Login Admin
+</button>
 
 <button id="musicBtn" class="music-btn">🎵</button>
 
