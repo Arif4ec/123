@@ -207,13 +207,25 @@ function renderKomentar(){
         const data = item.data();
 
         list.innerHTML += `
-        <div class="ucapan-card">
+<div class="ucapan-card">
+
+    <div class="ucapan-header">
+
+        <div class="avatar">
+            ${data.nama.charAt(0).toUpperCase()}
+        </div>
+
+        <div class="info">
 
             <h3>${data.nama}</h3>
 
             <small>${data.hadir}</small>
 
-            <p>${data.pesan}</p>
+        </div>
+
+    </div>
+
+    <p>${data.pesan}</p>
 
             ${isAdmin ? `
             <button onclick="hapusKomentar('${item.id}')" class="hapus-btn">
