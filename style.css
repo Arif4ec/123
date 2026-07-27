@@ -544,9 +544,11 @@ h1{
 
     .arab{
 
-        font-size:26px;
-        line-height:2;
-        padding:0 12px;
+        font-size:30px;
+
+        line-height:1.8;
+
+        padding:0 15px;
 
     }
 
