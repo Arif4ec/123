@@ -405,15 +405,13 @@ h1{
     direction:rtl;
     text-align:center;
 
-    font-size:40px;
-    line-height:2;
+    font-size:18px;      /* sebelumnya 28px */
+    line-height:2.2;
 
-    width:100%;
-    max-width:none;
-
+    max-width:100%;
     margin:40px auto;
 
-    padding:0;
+    padding:0 10px;
 
 }
 
