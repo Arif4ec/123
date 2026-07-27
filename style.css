@@ -405,12 +405,15 @@ h1{
     direction:rtl;
     text-align:center;
 
-    font-size:30px;
+    font-size:40px;
     line-height:2;
 
-    max-width:850px;
+    width:100%;
+    max-width:none;
+
     margin:40px auto;
-    padding:0 15px;
+
+    padding:0;
 
 }
 
@@ -544,11 +547,15 @@ h1{
 
     .arab{
 
-        font-size:30px;
+        font-size:24px !important;
 
-        line-height:1.8;
+        line-height:2.1;
 
-        padding:0 15px;
+        padding:0 5px;
+
+        width:100%;
+
+        max-width:none;
 
     }
 
