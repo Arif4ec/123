@@ -405,7 +405,7 @@ h1{
     direction:rtl;
     text-align:center;
 
-    font-size:12px;      /* pas dilaptop 24px */
+    font-size:24px;      /* pas dilaptop 24px */
     line-height:2.2;
 
     max-width:100%;
