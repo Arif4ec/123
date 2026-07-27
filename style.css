@@ -400,12 +400,18 @@ h1{
 }
 
 .arab{
+
     font-family:'Noto Naskh Arabic', serif;
-    direction: rtl;
-    text-align: center;
-    font-size: 40px;
-    max-width: 850px;
-    margin: 40px auto;
+    direction:rtl;
+    text-align:center;
+
+    font-size:30px;
+    line-height:2;
+
+    max-width:850px;
+    margin:40px auto;
+    padding:0 15px;
+
 }
 
 .arab span{
