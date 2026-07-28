@@ -546,17 +546,20 @@ h1{
 
 @media (max-width:768px){
 
-    .arab{
-
-        font-size:24px !important;
-
-        line-height:2.1;
-
-        padding:0 5px;
+    .ayat{
 
         width:100%;
+        padding:35px 10px;
 
-        max-width:none;
+    }
+
+    .arab{
+
+        font-size:26px;
+        width:100%;
+        max-width:100%;
+        line-height:2;
+        padding:0;
 
     }
 
