@@ -402,19 +402,22 @@ h1{
 .arab{
 
     font-family:'Noto Naskh Arabic', serif;
+
     direction:rtl;
+
     text-align:center;
 
-    font-size:24px;      /* pas dilaptop 24px */
-    line-height:2.2;
+    font-size:24px;
 
-    max-width:100%;
+    line-height:2;
+
+    width:100%;
+
+    max-width:1200px;
+
     margin:40px auto;
 
-    padding:0 10px;
-
 }
-
 .arab span{
     display: block;
     margin: 28px 0;   /* <-- tambah jarak antar baris */
@@ -543,20 +546,17 @@ h1{
 
 @media (max-width:768px){
 
-    .ayat{
-
-        width:100%;
-        padding:35px 10px;
-
-    }
-
     .arab{
 
-        font-size:26px;
+        font-size:24px !important;
+
+        line-height:2.1;
+
+        padding:0 5px;
+
         width:100%;
-        max-width:100%;
-        line-height:2;
-        padding:0;
+
+        max-width:none;
 
     }
 
